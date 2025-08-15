@@ -48,14 +48,14 @@ const ParticleBackground = () => {
         },
         particles: {
           color: {
-            value: ["#8B5CF6", "#06B6D4", "#EC4899", "#F59E0B"],
+            value: ["#A855F7", "#06B6D4", "#EC4899", "#F59E0B", "#10B981"],
           },
           links: {
-            color: "#8B5CF6",
-            distance: 150,
+            color: "#A855F7",
+            distance: 180,
             enable: true,
-            opacity: 0.2,
-            width: 1,
+            opacity: 0.4,
+            width: 2,
           },
           move: {
             direction: "none",
@@ -64,7 +64,7 @@ const ParticleBackground = () => {
               default: "bounce",
             },
             random: false,
-            speed: 1,
+            speed: 1.5,
             straight: false,
           },
           number: {
@@ -72,18 +72,18 @@ const ParticleBackground = () => {
               enable: true,
               area: 800,
             },
-            value: 80,
+            value: 120,
           },
           opacity: {
-            value: 0.5,
+            value: 0.7,
             random: {
               enable: true,
-              minimumValue: 0.1,
+              minimumValue: 0.2,
             },
             animation: {
               enable: true,
-              speed: 1,
-              minimumValue: 0.1,
+              speed: 1.5,
+              minimumValue: 0.2,
               sync: false,
             },
           },

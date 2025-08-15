@@ -50,45 +50,50 @@ const Features = () => {
   return (
     <section className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mb-8 animate-text-shimmer">
             Why Choose DreamWave?
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-3xl mx-auto font-medium leading-relaxed">
             Experience the perfect blend of technology and tranquility with features designed for your wellbeing
           </p>
+          <div className="w-32 h-1 gradient-accent mx-auto mt-8 rounded-full"></div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {features.map((feature, index) => (
             <Card 
               key={index} 
-              className="p-8 gradient-card border-border/50 backdrop-glass hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group"
+              className="p-10 gradient-card border-border/50 backdrop-glass hover:shadow-intense transition-all duration-700 hover:-translate-y-4 group animate-slide-up relative overflow-hidden"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="relative mb-6">
+              <div className="relative mb-8">
                 {feature.image ? (
-                  <div className="w-16 h-16 rounded-2xl overflow-hidden mb-4 shadow-card">
+                  <div className="w-20 h-20 rounded-3xl overflow-hidden mb-6 shadow-intense group-hover:shadow-glow transition-all duration-500">
                     <img 
                       src={feature.image} 
                       alt={feature.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-700"
                     />
                   </div>
                 ) : (
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-4 shadow-card group-hover:shadow-glow transition-all duration-500`}>
-                    <div className="text-foreground group-hover:scale-110 transition-transform duration-300">
+                  <div className={`w-20 h-20 rounded-3xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6 shadow-intense group-hover:shadow-glow transition-all duration-500 group-hover:rotate-12`}>
+                    <div className="text-foreground group-hover:scale-125 transition-transform duration-500">
                       {feature.icon}
                     </div>
                   </div>
                 )}
               </div>
               
-              <h3 className="text-2xl font-semibold mb-4 text-foreground">
+              <h3 className="text-2xl md:text-3xl font-bold mb-6 text-foreground group-hover:text-primary-glow transition-colors duration-500">
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed text-lg group-hover:text-foreground/90 transition-colors duration-500">
                 {feature.description}
               </p>
+
+              {/* Subtle glow effect on hover */}
+              <div className="absolute -inset-1 bg-gradient-accent rounded-3xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-700" />
             </Card>
           ))}
         </div>

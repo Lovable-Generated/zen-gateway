@@ -19,7 +19,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				visby: ['Visby', 'system-ui', 'sans-serif'],
+				nunito: ['Nunito', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
