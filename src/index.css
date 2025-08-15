@@ -2,39 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Premium Sleep & Meditation App Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Brand Colors - Calming Purple & Blue Palette */
+    --background: 245 25% 8%;
+    --foreground: 240 20% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 245 20% 12%;
+    --card-foreground: 240 15% 90%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 245 20% 10%;
+    --popover-foreground: 240 15% 90%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 265 85% 58%;
+    --primary-foreground: 245 25% 8%;
+    --primary-glow: 265 85% 68%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 245 30% 15%;
+    --secondary-foreground: 240 15% 85%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 245 20% 18%;
+    --muted-foreground: 240 10% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 200 100% 70%;
+    --accent-foreground: 245 25% 8%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 245 15% 20%;
+    --input: 245 15% 16%;
+    --ring: 265 85% 58%;
+
+    /* Premium Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(265 85% 58% / 0.9), hsl(245 85% 45% / 0.8), hsl(220 85% 55% / 0.9));
+    --gradient-card: linear-gradient(145deg, hsl(245 20% 12% / 0.8), hsl(245 25% 8% / 0.6));
+    --gradient-accent: linear-gradient(90deg, hsl(265 85% 58%), hsl(200 100% 70%));
+    --gradient-glow: radial-gradient(ellipse at center, hsl(265 85% 58% / 0.3), transparent 70%);
+
+    /* Elegant Shadows */
+    --shadow-soft: 0 4px 20px hsl(245 25% 8% / 0.4);
+    --shadow-glow: 0 0 40px hsl(265 85% 58% / 0.3);
+    --shadow-card: 0 8px 32px hsl(245 25% 8% / 0.6);
+
+    /* Smooth Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    --transition-glow: all 0.3s ease-out;
 
     --radius: 0.5rem;
 
@@ -100,6 +115,65 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-visby;
+  }
+
+  /* Custom utility classes */
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-glow {
+    transition: var(--transition-glow);
+  }
+
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Glow pulse animation */
+  @keyframes glow-pulse {
+    0%, 100% { 
+      filter: drop-shadow(0 0 20px hsl(265 85% 58% / 0.4));
+    }
+    50% { 
+      filter: drop-shadow(0 0 30px hsl(265 85% 58% / 0.8));
+    }
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  /* Backdrop blur for glass morphism */
+  .backdrop-glass {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
 }
