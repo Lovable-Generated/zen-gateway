@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Download, Star } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
+import ParticleBackground from "@/components/ParticleBackground";
+import StarsParticles from "@/components/StarsParticles";
 
 const Hero = () => {
   return (
@@ -19,12 +21,20 @@ const Hero = () => {
       {/* Gradient Overlay */}
       <div className="absolute inset-0 z-10 gradient-hero" />
       
+      {/* Particle Effects */}
+      <div className="absolute inset-0 z-15">
+        <StarsParticles />
+      </div>
+      <div className="absolute inset-0 z-16">
+        <ParticleBackground />
+      </div>
+      
       {/* Floating Glow Effects */}
       <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary/20 blur-3xl animate-float" />
       <div className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full bg-accent/15 blur-3xl animate-float" style={{ animationDelay: '2s' }} />
       
       {/* Content */}
-      <div className="relative z-20 text-center px-6 max-w-4xl mx-auto">
+      <div className="relative z-30 text-center px-6 max-w-4xl mx-auto">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-primary-glow to-accent bg-clip-text text-transparent leading-tight">
             DreamWave
